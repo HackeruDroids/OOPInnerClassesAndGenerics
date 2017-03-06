@@ -11,13 +11,16 @@ public class DriveTask extends TimerTask {
     Car c = new Car();
     int counter = 0;
 
+
     @Override
     public void run() {
-        counter++;
-        if (counter == printMe.length)
-            counter = 0;
         System.out.println(printMe[counter]);
         c.drive();
         c.turn(20);
+
+        counter++;
+        if (counter == 6) {
+            counter = 0;
+        }
     }
 }
